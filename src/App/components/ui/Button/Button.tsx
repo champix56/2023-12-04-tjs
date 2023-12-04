@@ -29,4 +29,7 @@ Button.propTypes = {
   bgColor: PropTypes.oneOf(['tomato', 'skyblue']),
   onButtonClick: PropTypes.func
 }
+Button.defaultProps={
+  onButtonClick:()=>{console.log('pas de buttonClick sur ce button');}
+}
 export default Button;
