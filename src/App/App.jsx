@@ -6,10 +6,10 @@ import Button from './components/ui/Button/Button';
 const App=(props)=>{
   return (
     <div className="App">Demat Breizh
-      <Button/>
-      <Button/>
-      <Button/>
-      <Button/>
+      <Button text="Coucou"/>
+      <Button text="benjamin"/>
+      <Button text="Submit"/>
+      <Button text="reset"/>
     </div>
   );
 }
