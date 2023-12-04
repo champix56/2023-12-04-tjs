@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Button from "./components/ui/Button/Button";
 
@@ -10,7 +10,15 @@ const App = (props) => {
   */
 
   const [counter, setCounter] = useState(0)
-  
+  useEffect(() => {
+    console.log('effect sur counter, vlue de counter :'+ counter)
+  }, [counter])
+  useEffect(() => {
+    setCounter(-1);
+    return () => {
+      console.log('destruction de l\'app')
+    };
+  }, []);
   return (
     <div className="App">
       Valeur de counter : {counter}
