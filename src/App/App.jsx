@@ -3,11 +3,7 @@ import './App.css';
 
 const App=(props)=>{
   return (
-    <div className="App">Demat
-    <ul className='ul'>
-        <li className='li'>abc</li>
-
-    </ul> Breizh</div>
+    <div className="App">Demat Breizh</div>
   );
 }
 
