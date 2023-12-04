@@ -1,21 +1,9 @@
 import React from "react";
 import styles from "./Button.module.css";
+import PropTypes from 'prop-types'
 
 const Button = (props) => {
   console.log(props);
-/*
-  let bgColor = undefined;
-  switch (props.model) {
-    case "primary":
-      bgColor = "skyblue";
-      break;
-    case "secondary":
-      bgColor = "skyblue";
-      break;
-    default:
-      bgColor = "skyblue";
-      break;
-  }*/
   return (
     <button
       className={styles.Button}
@@ -25,5 +13,8 @@ const Button = (props) => {
     </button>
   );
 };
-
+Button.propTypes={
+    text: PropTypes.string.isRequired,
+    bgColor: PropTypes.string
+}
 export default Button;

@@ -9,6 +9,7 @@ const App = (props) => {
       <hr />
       <Button text="Submit" bgColor="skyblue" />
       <Button text="reset" bgColor="tomato" />
+      <Button   />
     </div>
   );
 };
