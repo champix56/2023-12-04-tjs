@@ -7,9 +7,14 @@ const App = (props) => {
     <div className="App">
       Demat Breizh
       <hr />
-      <Button text="Submit" bgColor="skyblue" />
+      <Button
+        text="Submit"
+        bgColor="skyblue"
+        onButtonClick={(arg) => {
+          console.log("%c%s", "color:red", "button clicked fnction de app");
+        }}
+      />
       <Button text="reset" bgColor="tomato" />
-      <Button   />
     </div>
   );
 };
