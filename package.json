@@ -10,6 +10,7 @@
     "@types/node": "^16.18.67",
     "@types/react": "^18.2.41",
     "@types/react-dom": "^18.2.17",
+    "orsys-tjs-meme": "^1.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -24,7 +25,6 @@
     "gen-layout": "npx generate-react-cli c --type=TSLayout ",
     "gen-ui": "npx generate-react-cli c --type=TSui ",
     "gen-feat": "npx generate-react-cli c --type=TSHooked "
-
   },
   "eslintConfig": {
     "extends": [
