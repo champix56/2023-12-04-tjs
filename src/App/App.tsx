@@ -20,7 +20,9 @@ const App : React.FC<IAppProps>= (props) => {
         <Navbar />
         <FlexWGrow1>
           <MemeSvgViewer meme={memeState}/>
-          <MemeForm meme={memeState}/>
+          <MemeForm meme={memeState} onMemeChange={(meme:MemeInterface)=>{
+            setMemeState(meme);
+          }}/>
         </FlexWGrow1>
         <Footer/>
       </FlexHGrow3>
