@@ -12,15 +12,10 @@ interface IFooterProps {
  * @returns 
  */
 const Footer: React.FC<IFooterProps> = (props) => {
-  useEffect(() => {
-    //mount
-    return () => {
-      //unmount
-    };
-  }, []);
+
   return (
     <div className={styles.Footer} data-testid="Footer" style={{...props.style}}>
-      Footer Component
+      MemeEditor &copy; 2023
     </div>
   );
 };

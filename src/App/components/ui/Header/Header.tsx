@@ -12,15 +12,9 @@ interface IHeaderProps {
  * @returns 
  */
 const Header: React.FC<IHeaderProps> = (props) => {
-  useEffect(() => {
-    //mount
-    return () => {
-      //unmount
-    };
-  }, []);
   return (
     <div className={styles.Header} data-testid="Header" style={{...props.style}}>
-      Header Component
+       <span className={styles.meme}>Meme</span>.<span className={styles.js}>js</span>
     </div>
   );
 };
