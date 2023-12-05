@@ -20,7 +20,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "gen-layout": "npx generate-react-cli c --type=TSLayout ",
+    "gen-ui": "npx generate-react-cli c --type=TSui ",
+    "gen-feat": "npx generate-react-cli c --type=TSHooked "
+
   },
   "eslintConfig": {
     "extends": [
