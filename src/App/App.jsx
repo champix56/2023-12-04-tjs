@@ -1,69 +1,29 @@
 import React from "react";
-import Button from "./components/ui/Button/Button";
+import PropTypes from "prop-types";
+import FlexHGrow3 from "./components/layout/FlexHGrow3/FlexHGrow3";
+import Header from "./components/ui/Header/Header";
+import Navbar from "./components/ui/Navbar/Navbar";
+import FlexWGrow1 from "./components/layout/FlexWGrow1/FlexWGrow1";
+import Footer from "./components/ui/Footer/Footer";
+import MemeSvgViewer from "./components/ui/MemeSvgViewer/MemeSvgViewer";
+import MemeForm from "./components/feature/MemeForm/MemeForm";
 
-export default class App extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = { counter: 0, hello: "de lu" };
-  }
-  componentDidMount() {
-    this.setState({ counter: -1 });
-  }
-  componentDidUpdate(prevProps, prevState) {
-    console.log("value after state", this.state);
-  }
-  render() {
-    return (
-      <div>
-        <div className="App">
-          Valeur de counter : {this.state.counter}
-          <hr />
-          <Button
-            bgColor="skyblue"
-            onButtonClick={(arg) => {
-              this.setState({ counter: this.state.counter - 1 });
-              console.log(this.state.counter);
-            }}
-          >
-            -1
-          </Button>
-          <Button
-            bgColor="tomato"
-            onButtonClick={() => {
-              this.setState({ counter: this.state.counter + 1 });
-              console.log(this.state.counter);
-            }}
-          >
-            <div>+1</div>
-          </Button>
-          <Button
-            bgColor="aquamarine"
-            onButtonClick={() => {
-              this.setState({ counter: this.state.counter + 1 });
-              console.log(this.state.counter);
-            }}
-          >
-            <img
-              src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/cross-256.png"
-              alt=""
-            />
-            <div>cancel</div>
-          </Button>
-          <Button
-            bgColor="red"
-            onButtonClick={() => {
-              this.setState({ counter: this.state.counter + 1 });
-              console.log(this.state.counter);
-            }}
-          >
-            <img
-              src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/cross-256.png"
-              alt=""
-            />
-            cancel
-          </Button>
-        </div>
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="App">
+      <FlexHGrow3>
+        <Header />
+        <Navbar />
+        <FlexWGrow1>
+          <MemeSvgViewer/>
+          <MemeForm/>
+        </FlexWGrow1>
+        <Footer/>
+      </FlexHGrow3>
+    </div>
+  );
+};
+
+App.propTypes = {};
+
+export default App;
