@@ -1,46 +1,41 @@
-import React, { useEffect, useState } from "react";
-import "./App.css";
+import React from "react";
 import Button from "./components/ui/Button/Button";
 
-const App = (props) => {
-  /*
-  const stateDatas = useState(0);
-  const value=stateDatas[0];
-  const changeStateFunction=stateDatas[1];
-  */
-
-  const [counter, setCounter] = useState(0)
-  useEffect(() => {
-    console.log('effect sur counter, vlue de counter :'+ counter)
-  }, [counter])
-  useEffect(() => {
-    setCounter(-1);
-    return () => {
-      console.log('destruction de l\'app')
-    };
-  }, []);
-  return (
-    <div className="App">
-      Valeur de counter : {counter}
-      <hr />
-      <Button
-        text="-1"
-        bgColor="skyblue"
-        onButtonClick={(arg) => {
-          setCounter(counter-1);
-          console.log(counter);
-        }}
-      />
-      <Button
-        text="+1"
-        bgColor="tomato"
-        onButtonClick={() => {
-          setCounter(counter-1);
-          console.log(counter);
-        }}
-      />
-    </div>
-  );
-};
-
-export default App;
+export default class App extends React.PureComponent {
+  constructor(props){
+    super(props)
+    this.state={counter:0, hello: 'de lu'}
+  }
+  componentDidMount(){
+    this.setState({counter:-1})
+  }
+  componentDidUpdate(prevProps,prevState){
+    console.log('value after state',this.state)
+  }
+  render() {
+    return (
+      <div>
+        <div className="App">
+          Valeur de counter : {this.state.counter}
+          <hr />
+          <Button
+            text="-1"
+            bgColor="skyblue"
+            onButtonClick={(arg) => {
+              this.setState({counter:this.state.counter - 1});
+              console.log(this.state.counter);
+            }}
+          />
+          <Button
+            text="+1"
+            bgColor="tomato"
+            onButtonClick={() => {
+              this.setState({counter:this.state.counter + 1});
+              console.log(this.state.counter);
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+}
