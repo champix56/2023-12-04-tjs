@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import styles from "./TemplateName.module.css";
 import PropTypes from 'prop-types'
 
-interface ITemplateNameProps { }
+interface ITemplateNameProps {
+  style?: object
+ }
 
 /**
  * TemplateName component
@@ -17,7 +19,7 @@ const TemplateName: React.FC<ITemplateNameProps> = (props) => {
     };
   }, []);
   return (
-    <div className={styles.TemplateName} data-testid="TemplateName" style={...props.style}>
+    <div className={styles.TemplateName} data-testid="TemplateName" style={{...props.style}}>
       TemplateName Component
     </div>
   );
