@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Button.module.css";
 import PropTypes from 'prop-types'
+import { JsxElement } from "typescript";
 
 interface IButtonProps {
-  text: string;
-  bgColor?: 'tomato' | 'skyblue' | undefined,
+  children: any;
+  bgColor?: 'tomato' | 'skyblue' | 'aquamarine' | 'red' | undefined,
   onButtonClick?: Function
 }
 const Button: React.FunctionComponent<IButtonProps> = (props) => {
+  
+  console.log(props);
+
   const [isClicked, setisClicked] = useState({clilckState:false, hello:'de lu'})
   useEffect(() => {
     console.log('chauffe marcel');
@@ -15,7 +19,7 @@ const Button: React.FunctionComponent<IButtonProps> = (props) => {
       setisClicked({...isClicked,clilckState:false})
     }, 350);
   }, [isClicked.clilckState])
-  console.log(props);
+
   const onClick = (evt: React.MouseEvent) => {
     setisClicked({...isClicked,clilckState:true});
     //cliqué
@@ -29,13 +33,13 @@ const Button: React.FunctionComponent<IButtonProps> = (props) => {
       style={{ backgroundColor: props.bgColor }}
       onClick={onClick}
     >
-      {props.text}
+      {props.children}
     </button>
   );
 };
 Button.propTypes = {
-  text: PropTypes.string.isRequired,
-  bgColor: PropTypes.oneOf(['tomato', 'skyblue']),
+  children: PropTypes.any.isRequired,
+  bgColor: PropTypes.oneOf(['tomato', 'skyblue', 'aquamarine', 'red']),
   onButtonClick: PropTypes.func
 }
 Button.defaultProps = {
