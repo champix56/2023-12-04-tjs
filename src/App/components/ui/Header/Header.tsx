@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import PropTypes from 'prop-types'
 
-interface IHeaderProps { }
+interface IHeaderProps {
+  style?: object
+ }
 
 /**
  * Header component
@@ -17,7 +19,7 @@ const Header: React.FC<IHeaderProps> = (props) => {
     };
   }, []);
   return (
-    <div className={styles.Header} data-testid="Header" style={...props.style}>
+    <div className={styles.Header} data-testid="Header" style={{...props.style}}>
       Header Component
     </div>
   );

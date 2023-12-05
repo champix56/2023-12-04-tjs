@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import PropTypes from 'prop-types'
 
-interface INavbarProps { }
+interface INavbarProps {
+  style?: object
+ }
 
 /**
  * Navbar component
@@ -17,7 +19,7 @@ const Navbar: React.FC<INavbarProps> = (props) => {
     };
   }, []);
   return (
-    <div className={styles.Navbar} data-testid="Navbar" style={...props.style}>
+    <div className={styles.Navbar} data-testid="Navbar" style={{...props.style}}>
       Navbar Component
     </div>
   );

@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import styles from "./Footer.module.css";
 import PropTypes from 'prop-types'
 
-interface IFooterProps { }
+interface IFooterProps {
+  style?: object
+ }
 
 /**
  * Footer component
@@ -17,7 +19,7 @@ const Footer: React.FC<IFooterProps> = (props) => {
     };
   }, []);
   return (
-    <div className={styles.Footer} data-testid="Footer" style={...props.style}>
+    <div className={styles.Footer} data-testid="Footer" style={{...props.style}}>
       Footer Component
     </div>
   );

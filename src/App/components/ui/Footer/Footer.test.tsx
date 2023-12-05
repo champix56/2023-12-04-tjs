@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 describe('<Footer />', () => {
   test('it should mount', () => {
-    render(<Footer ><div>Hello</div></Footer>);
+    render(<Footer />);
 
     const footer = screen.getByTestId('Footer');
 

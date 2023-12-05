@@ -5,7 +5,7 @@ import MemeSvgViewer from './MemeSvgViewer';
 
 describe('<MemeSvgViewer />', () => {
   test('it should mount', () => {
-    render(<MemeSvgViewer ><div>Hello</div></MemeSvgViewer>);
+    render(<MemeSvgViewer />);
 
     const memeSvgViewer = screen.getByTestId('MemeSvgViewer');
 

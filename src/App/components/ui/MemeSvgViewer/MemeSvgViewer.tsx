@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import styles from "./MemeSvgViewer.module.css";
 import PropTypes from 'prop-types'
 
-interface IMemeSvgViewerProps { }
+interface IMemeSvgViewerProps {
+  style?: object
+ }
 
 /**
  * MemeSvgViewer component
@@ -17,7 +19,7 @@ const MemeSvgViewer: React.FC<IMemeSvgViewerProps> = (props) => {
     };
   }, []);
   return (
-    <div className={styles.MemeSvgViewer} data-testid="MemeSvgViewer" style={...props.style}>
+    <div className={styles.MemeSvgViewer} data-testid="MemeSvgViewer" style={{...props.style}}>
       MemeSvgViewer Component
     </div>
   );

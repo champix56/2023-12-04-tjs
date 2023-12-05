@@ -5,7 +5,7 @@ import Header from './Header';
 
 describe('<Header />', () => {
   test('it should mount', () => {
-    render(<Header ><div>Hello</div></Header>);
+    render(<Header />);
 
     const header = screen.getByTestId('Header');
 

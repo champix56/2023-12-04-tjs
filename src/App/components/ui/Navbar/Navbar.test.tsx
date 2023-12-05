@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 
 describe('<Navbar />', () => {
   test('it should mount', () => {
-    render(<Navbar ><div>Hello</div></Navbar>);
+    render(<Navbar />);
 
     const navbar = screen.getByTestId('Navbar');
 
