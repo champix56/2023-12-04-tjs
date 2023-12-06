@@ -5,7 +5,7 @@ import MemeForm from './MemeForm';
 import { emptyMeme } from 'orsys-tjs-meme'
 describe('<MemeForm />', () => {
   test('it should mount', () => {
-    render(<MemeForm meme={emptyMeme} />);
+    render(<MemeForm images={[]} meme={emptyMeme} onMemeChange={()=>{}} />);
     const memeForm = screen.getByTestId('MemeForm');
 
     expect(memeForm).toBeInTheDocument();

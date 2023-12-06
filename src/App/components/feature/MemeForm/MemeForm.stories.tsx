@@ -5,7 +5,7 @@ export default {
   title: "MemeForm",
 };
 
-export const Default = () => <MemeForm meme={emptyMeme}/>;
+export const Default = () => <MemeForm images={[]}  onMemeChange={()=>{}} meme={emptyMeme}/>;
 
 Default.story = {
   name: 'default',

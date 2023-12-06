@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styles from "./MemeSvgViewer.module.css";
 import PropTypes from 'prop-types'
-import { MemeInterface } from "orsys-tjs-meme";
+import { ImageInterface, MemeInterface } from "orsys-tjs-meme";
 
 interface IMemeSvgViewerProps {
   style?: object,
-  meme: MemeInterface
+  meme: MemeInterface,
+  image?: ImageInterface
 }
 
 /**
@@ -14,15 +15,12 @@ interface IMemeSvgViewerProps {
  * @returns 
  */
 const MemeSvgViewer: React.FC<IMemeSvgViewerProps> = (props) => {
-  useEffect(() => {
-    //mount
-    return () => {
-      //unmount
-    };
-  }, []);
   return (
-    <svg viewBox="0 0 100 100" className={styles.MemeSvgViewer} data-testid="MemeSvgViewer" style={{ ...props.style }}>
-      <image href="" x="0" y="0" />
+    <svg
+      viewBox={`0 0 ${props.image ? props.image.w : 100} ${props.image?.h ?? 100}`}
+      className={styles.MemeSvgViewer}
+      data-testid="MemeSvgViewer" style={{ ...props.style }}>
+      {props.image && <image href={props.image.url} x="0" y="0" />}
       <text x={props.meme.x} y={props.meme.y}
         fontWeight={props.meme.fontWeight}
         fill={props.meme.color}

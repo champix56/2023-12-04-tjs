@@ -1,0 +1,1 @@
+export const REST_ARD:string="http://localhost:5629"
