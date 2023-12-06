@@ -9,12 +9,13 @@ import MemeSvgViewer from "./components/ui/MemeSvgViewer/MemeSvgViewer";
 import MemeForm from "./components/feature/MemeForm/MemeForm";
 import { emptyMeme, ImageInterface, MemeInterface } from "orsys-tjs-meme";
 import { REST_ARD } from "./config/config";
+import {store} from './store/store'
 interface IAppProps { }
 
 const App: React.FC<IAppProps> = (props) => {
   const [memeState, setMemeState] = useState<MemeInterface>(emptyMeme)
   const [imageState, setImageState] = useState<Array<ImageInterface>>([])
-  console.log(memeState)
+  console.log(memeState,store)
   useEffect(() => {
     fetch(`${REST_ARD}/images`, {
       method: 'GET',
