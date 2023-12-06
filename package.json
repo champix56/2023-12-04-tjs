@@ -26,7 +26,8 @@
     "gen-ui": "npx generate-react-cli c --type=TSui ",
     "gen-feat": "npx generate-react-cli c --type=TSHooked ",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "json": "npx json-server -p 5629 db/db.json"
   },
   "eslintConfig": {
     "extends": [
