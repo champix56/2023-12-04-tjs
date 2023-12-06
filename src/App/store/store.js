@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import ressourcesReducer, { addImages } from "./ressources";
+import ressourcesReducer, { addImages, fetchImages } from "./ressources";
 import currentReducer from "./current";
 
 export const store = configureStore({
@@ -12,11 +12,14 @@ export const store = configureStore({
 store.subscribe(() => {
   console.trace(store.getState());
 });
-store.dispatch({
-  type: "ressources/addImages",
-  payload: [{ id: 0 }, { id: 1 }],
-});
-const addImageAction = addImages([{ id: 3 }, { id: 4 }]);
-console.log(addImageAction);
-store.dispatch(addImageAction);
-store.dispatch(addImages([{ id: 5 }, { id: 6 }]));
+store.dispatch(fetchImages());
+
+
+// store.dispatch({
+//   type: "ressources/addImages",
+//   payload: [{ id: 0 }, { id: 1 }],
+// });
+// const addImageAction = addImages([{ id: 3 }, { id: 4 }]);
+// console.log(addImageAction);
+// store.dispatch(addImageAction);
+// store.dispatch(addImages([{ id: 5 }, { id: 6 }]));

@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { REST_ARD } from "../config/config";
 
 const initialState = {
   images: [],
@@ -18,6 +19,26 @@ const ressources = createSlice({
 export const { addImages } = ressources.actions;
 const ressourcesReducer = ressources.reducer;
 export default ressourcesReducer;
+export const fetchImages = createAsyncThunk(
+  "ressources/fetchImages",
+  async () => {
+    const pri = await fetch(`${REST_ARD}/images`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "API-TOKEN": "sdfghjklkjhgfd",
+      },
+    });
+    const prm = await fetch(`${REST_ARD}/memes`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    });
+    const pral = await Promise.all([pri, prm]);
+    return await { images: await pral[0].json(), memes: await pral[1].json() };
+  }
+);
 /*
 const ressourcesReducer= (state = initialState, { type, payload }) => {
   switch (type) {
