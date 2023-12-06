@@ -23,6 +23,7 @@ export const saveMeme = createAsyncThunk("current/saveMeme", async (meme) => {
     {
       method: meme.id !== undefined ? "PUT" : "POST",
       headers: { "Content-Type": "application/json" },
+      body:JSON.stringify(meme)
     }
   );
   return await pr.json();
