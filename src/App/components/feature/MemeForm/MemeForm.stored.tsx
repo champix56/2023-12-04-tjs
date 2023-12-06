@@ -5,7 +5,7 @@ import { updateCurrent } from '../../../store/current'
 interface IConnectedMemeFormProps {
     style?: object
   }
-  export const ConnectedMemeForm: React.FC<IConnectedMemeFormProps> = (props) => {
+   const MemeForm: React.FC<IConnectedMemeFormProps> = (props) => {
     const dispatch = useDispatch();
     /*const datas = useSelector((storeState: any) => {
       return { images: storeState.ressources.images, meme: storeState.current }
@@ -21,7 +21,7 @@ interface IConnectedMemeFormProps {
       }} />
     );
   }
-  
+  export default MemeForm;
   /*
   function mapStateToProps(state: any, owprops: any) {
     return {

@@ -7,6 +7,7 @@ import FlexWGrow1 from "./components/layout/FlexWGrow1/FlexWGrow1";
 import Footer from "./components/ui/Footer/Footer";
 import MemeSvgViewer from "./components/ui/MemeSvgViewer/MemeSvgViewer";
 import MemeForm from "./components/feature/MemeForm/MemeForm";
+import ConnectedMemeForm from "./components/feature/MemeForm/MemeForm.stored";
 import { emptyMeme, ImageInterface, MemeInterface } from "orsys-tjs-meme";
 import { REST_ARD } from "./config/config";
 import {store} from './store/store'
@@ -34,11 +35,12 @@ const App: React.FC<IAppProps> = (props) => {
         <Navbar />
         <FlexWGrow1>
           <MemeSvgViewer meme={memeState} image={imageState.find(img => img.id === memeState.imageId)} />
-          <MemeForm meme={memeState} onMemeChange={(meme: MemeInterface) => {
+          {/* <MemeForm meme={memeState} onMemeChange={(meme: MemeInterface) => {
             setMemeState(meme);
           }}
             images={imageState}
-          />
+          /> */}
+          <ConnectedMemeForm/>
         </FlexWGrow1>
         <Footer />
       </FlexHGrow3>

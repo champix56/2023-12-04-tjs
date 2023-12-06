@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./MemeForm.module.css";
-import PropTypes, { func } from 'prop-types'
+import PropTypes from 'prop-types'
 import { ImageInterface, MemeInterface, emptyMeme } from "orsys-tjs-meme";
-import { updateCurrent } from "../../../store/current";
 // import { connect } from 'react-redux'
-import { useDispatch, useSelector } from 'react-redux'
 interface IMemeFormProps {
   style?: object
   meme: MemeInterface
@@ -20,8 +18,6 @@ const initialState: IMemeFormState = {};
  * @returns 
  */
 const MemeForm: React.FC<IMemeFormProps> = (props) => {
-  const [meme, setmeme] = useState(emptyMeme)
-  const [images, setimages] = useState([])
 
   return (
     <div className={styles.MemeForm} data-testid="MemeForm" style={{ ...props.style }}>
