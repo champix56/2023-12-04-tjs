@@ -36,7 +36,7 @@ export const fetchImages = createAsyncThunk(
       },
     });
     const pral = await Promise.all([pri, prm]);
-    return await { images: await pral[0].json(), memes: await pral[1].json() };
+    return { images: await pral[0].json(), memes: await pral[1].json() };
   }
 );
 /*
