@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import styles from "./MemeForm.module.css";
 import PropTypes, { func } from 'prop-types'
 import { ImageInterface, MemeInterface, emptyMeme } from "orsys-tjs-meme";
-import { store } from "../../../store/store";
 import { updateCurrent } from "../../../store/current";
-import {connect} from 'react-redux'
+// import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 interface IMemeFormProps {
   style?: object
   meme: MemeInterface
@@ -167,19 +167,3 @@ MemeForm.defaultProps = {};
 
 
 export default MemeForm;
-
-function mapStateToProps(state: any, owprops: any) {
-  return {
-    ...owprops,
-    images: state.ressources.images,
-    meme: state.courrent
-  }
-}
-function mapDispatchToProps(dispatch: Function) {
-  return {
-    onMemeChange: (meme: MemeInterface) => {
-      dispatch(updateCurrent(meme))
-    }
-  }
-}
-export const ConnectedMemeForm=connect(mapStateToProps,mapDispatchToProps)(MemeForm)
